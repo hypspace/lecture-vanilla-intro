@@ -1,0 +1,125 @@
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+
+  /* size */
+  --size-base-space: 6px;
+  --size-border: 4px;
+  --size-button: 50px;
+  --size-font: 16px;
+  --size-thumbnail: 40px;
+
+  /* animation */
+  --animation-duration: 300ms;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--color-black);
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.btn {
+  margin-right: var(--size-base-space);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.logo,
+.btn {
+  transition: transform var(--animation-duration) ease;
+}
+
+.logo:hover,
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  padding: calc(var(--size-base-space) * 2);
+  border-radius: var(--size-border);
+  font-size: var(--size-font);
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+
+.pink {
+  background-color: var(--color-pink);
+}
+
+.items {
+  width: 60%;
+  height: 60%;
+  list-style: none;
+  padding-left: 0;
+  overflow-y: auto;
+  transition: opacity calc(var(--animation-duration) * 3) ease;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: var(--size-base-space);
+  margin-bottom: calc(var(--size-base-space) / 2);
+  background-color: var(--color-white);
+  border-radius: calc(var(--size-border) / 2);
+}
+
+.item.hide {
+  display: none;
+}
+
+.item__thumbnail {
+  width: var(--size-thumbnail);
+  height: var(--size-thumbnail);
+  margin-right: var(--size-base-space);
+}
+
+.item__description {
+  font-size: var(--size-font);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    /* size */
+    --size-base-space: 4px;
+    --size-border: 4px;
+    --size-button: 40px;
+    --size-font: 14px;
+    --size-thumbnail: 30px;
+  }
+
+  .items {
+    width: 80%;
+  }
+}
